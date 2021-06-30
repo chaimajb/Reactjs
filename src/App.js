@@ -1,33 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 function App() {
   return (
     <div className="App">
       <h1>Your Account</h1>
-      <form className="form">
-        <div>
-          <label for=" username"  >username: </label>
-          <input type="text" placeholder=" username"></input> 
-        </div>
-        <div>
-          <label for=" password">password: </label>
-          <input type="password" placeholder="password"></input>
-        </div>
-        <div>
-          <label for=" gender">Gender: </label>
-          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-            <option selected>Open this select menu</option>
-            <option value="female">female</option>
-            <option value="male">male</option>
-          </select>
-        </div>
-        <div>
-          <input type="checkbox" ></input>
-          <label for=" Accept-terms">Accept terms</label> 
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+            <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
 
-      </form>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 }
